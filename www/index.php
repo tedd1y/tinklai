@@ -1,4 +1,6 @@
 <?php
+date_default_timezone_set('Europe/Vilnius'); // Lietuvos laikas
+
 // ===== Prisijungimas prie DB =====
 $server = "mysql";
 $db = "stud";
