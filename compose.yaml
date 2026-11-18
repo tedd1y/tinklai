@@ -1,12 +1,20 @@
 services:
   php:
     image: titstu1/zinutes
+    platform: linux/amd64
+    build:
+      context: .
+      dockerfile: docker/php.Dockerfile
     volumes:
       - ./www:/var/www/html
     ports:
       - "80:80"
   mysql:
     image: titstu1/zinuciu-db
+    platform: linux/amd64
+    build:
+      context: .
+      dockerfile: docker/db.Dockerfile
     volumes:
       - dbfiles:/var/lib/mysql
   phpmyadmin:
