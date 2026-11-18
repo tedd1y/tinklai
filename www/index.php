@@ -63,6 +63,12 @@ if (!$result = $conn->query($sql)) {
         #zinutes tr:hover {
             background-color: #ddd;
         }
+
+        /* geltona antraštė ir paskutinė eilutė */
+        #zinutes tr.geltona {
+            background-color: #ffff66;
+            font-weight: bold;
+        }
     </style>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
@@ -78,8 +84,8 @@ if (!$result = $conn->query($sql)) {
 
 <!-- Žinučių lentelė -->
 <table style="margin: 0px auto;" id="zinutes">
-    <tr>
-        <td>Nr</td>
+    <tr class="geltona">
+        <td>Nr.</td>
         <td>Kas siuntė</td>
         <td>Siuntėjo e-paštas</td>
         <td>Gavėjas</td>
@@ -97,9 +103,15 @@ if (!$result = $conn->query($sql)) {
             <td><?= $row['zinute'] ?></td>
         </tr>
     <?php endwhile; ?>
+
+    <tr class="geltona">
+        <td colspan="6">Darbą atliko: Titas Štuopis</td>
+    </tr>
 </table>
 
 <br>
+
+<center><h3>Įveskite naują žinutę</h3></center>
 
 <!-- Naujos žinutės forma -->
 <div class="container">
@@ -121,7 +133,13 @@ if (!$result = $conn->query($sql)) {
             <textarea name='zinute' class="form-control input-sm"></textarea>
         </div>
         <div class="form-group col-lg-2">
-            <input type='submit' name='ok' value='siųsti' class="btnbtn-default">
+            <input type='submit' name='ok' value='Siųsti' class="btnbtn-default">
+        </div>
+        <div class="form-group col-lg-2">
+            <input type='button' value='Toliau' onclick="location.href='bootstrap_automobilis.htm'">
+        </div>
+        <div class="form-group col-lg-4">
+            <a href="bootstrap_automobilis.htm"><b>Toliau į bootstrap_automobilis.htm</b></a>
         </div>
     </form>
 </div>
