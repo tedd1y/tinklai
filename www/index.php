@@ -136,7 +136,7 @@ if (!$result = $conn->query($sql)) {
             <input type='submit' name='ok' value='Siųsti' class="btnbtn-default">
         </div>
         <div class="form-group col-lg-2">
-            <input type='button' value='Toliau' onclick="location.href='bootstrap_automobilis.htm'">
+            <input type='button' value='Toliau' onclick="location.href='automobilis.htm'">
         </div>
         <div class="form-group col-lg-4">
             <a href="bootstrap_automobilis.htm"><b>Toliau į bootstrap_automobilis.htm</b></a>
