@@ -1,0 +1,19 @@
+services:
+  php:
+    image: titstu1/zinutes
+    volumes:
+      - ./www:/var/www/html
+    ports:
+      - "8080:80"
+  mysql:
+    image: titstu1/zinuciu-db
+    volumes:
+      - dbfiles:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8001:80"
+    environment:
+      PMA_HOST: mysql
+volumes:
+  dbfiles:
